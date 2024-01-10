@@ -1,0 +1,407 @@
+@import url(_layout.min.css);
+
+* {
+    margin: 0; 
+    padding: 0;
+    font-family: 'Exo 2', sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    font-size: 50px;
+    line-height: 60px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 40px;
+    line-height: 48px;
+    font-weight: 300;
+}
+
+p {
+    font-size: 25px;
+    line-height: 22px;
+    font-weight: 300;
+}
+
+span {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* FONTS RESPONSIVO */
+
+@media (max-width:992px){
+    h1 {
+        font-size: 35px;
+        line-height: 45px;
+    }
+
+    h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    h3 {
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 300;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 16px;
+    }
+}
+
+.container {
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* CONTAINER RESPONSIVO */
+
+@media (max-width:1600px){
+    .container {
+        max-width: 90%;
+    }
+}
+
+/*Seçao 1*/
+
+.mercury {
+    padding: 140px 0 80px 0;
+    display: flex;
+}
+
+.intro-col-left p {
+    color: #15262C;
+    width: 85%;
+    padding-top: 40px;
+}
+
+/* SEÇÃO 1 RESPONSIVA */
+
+@media (max-width:1200px){
+    .intro {
+        display: none;
+    }
+
+    .intro-mobile {
+        display: block;
+    }
+
+    .intro-mobile .intro-col-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .intro-mobile .intro-col-left h1 {
+        width: 50%;
+    }
+
+    .intro-mobile .intro-col-left img {
+        padding-bottom: 40px;
+    }
+
+    .intro-mobile .intro-col-left p {
+        width: 50%;
+        padding: 0;
+    }
+}
+
+/*Seçao 2*/
+
+.cta {
+    background-image: url(/img/history-img.jpg);
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 50px 0 80px 0;
+    position: relative;
+}
+
+.cta::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: rgba(0, 0, 0, .45);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+.cta-test {
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.cta-test h2 {
+    color: #FCC202;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.cta a {
+    background: rgb(217,191,12);
+    background: linear-gradient(90deg, rgba(217,191,12,1) 10%, rgba(255,222,0,1) 100%);
+    border-radius: 30px;
+    margin-top: 40px;
+    padding: 15px 0;
+    width: 350px;
+}
+
+.cta a:hover{
+    background: rgb(190, 167, 15);;
+}
+
+.cta span {
+    color: #182630;
+    text-transform: uppercase;
+}
+
+.cta span::after {
+    content: url(/img/arrow.svg);
+    margin-left: 15px;
+}
+
+/* SEÇÃO 2 RESPONSIVO */
+
+@media (max-width:992px){
+    .cta {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+        padding: 80px 0;
+    }
+
+    .cta-test {
+        gap: 18px;
+    }
+
+    .cta-test h2{
+        margin-top: 50px;
+    }
+
+    .cta-test a {
+        margin: 0;
+    }
+}
+
+/*Seçao 3*/
+
+.midia {
+    text-align: center;
+    padding: 250px 0 140px 0;
+}
+
+.midia-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 130px;
+}
+
+.midia-list-item,
+.bg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.midia-list-item .bg {
+    background-repeat: no-repeat;
+    position: relative;
+    width: 372px;
+    height: 326px;
+    border-radius: 0 0 90px 0;
+}
+
+.midia-list-item .bg::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: rgba(246, 183, 0, .7);
+    border-radius: 0 0 90px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.midia-list-item .bg:hover::before{
+    background: linear-gradient(90deg, #eeb200 0%, #EEDA00 70%);
+}
+
+.midia-list-item .bg img {
+    z-index: 1;
+    filter: brightness(1000%);
+}
+
+.midia-list-item .bg:hover img {
+    filter: brightness(100%);
+}
+
+.midia-list-item a {
+    display: none;
+    background-color: #FFFF;
+    position: absolute;
+    bottom: 50px;
+    padding: 10px 30px;
+    border-radius: 30px;
+}
+
+.midia-list-item .bg:hover a{
+    display: flex;
+    align-items: center;
+}
+
+.midia-list-item span {
+    color: #182630;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 300;
+}
+
+.midia-list-item p {
+    width: 70%;
+    padding-top: 15px;
+    line-height: 30px;
+}
+
+/* SEÇÃO 3 RESPONSIVA */
+
+@media (max-width:1400px){
+    .midia-list {
+        gap: 10px;
+    }
+}
+
+@media (max-width:1200px){
+    .midia {
+        padding: 120px 0 80px 0;
+    }
+
+    .midia-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .midia-list-item{
+        width: 60%;
+    }
+}
+
+@media (max-width:992px){
+    .midia-list-item p{
+        font-size: 18px;
+        line-height: 20px;
+        width: 45%;
+     }
+}
+
+/*Seçao 4*/
+
+.setor {
+    background-image: url(/img/banner-renew.jpg);
+    background-repeat: no-repeat;
+    margin-bottom: 70px;
+}
+
+.setor-title {
+    margin-left: 50px;
+    width: 50%;
+}
+
+.setor .inferior {
+    padding-top: 560px;
+}
+
+.setor-informacoes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: end;
+    gap: 50px;
+}
+
+.endereco {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.setor-informacoes .endereco p {
+    color: #15262C;
+    line-height: 30px;
+}
+
+.setor-informacoes .social a {
+    color: #15262C;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+/* SEÇÃO 4 RESPONSIVA */
+
+@media (max-width: 1200px){
+    .setor-title {
+        width: 80%;
+    }
+
+    .setor .inferior {
+        padding-top: 600px;
+    }
+
+}
+
+@media (max-width: 992px){
+    .setor {
+        display: none;
+    }
+
+    .setor-title {
+        width: auto;
+        text-align: center;
+    }
+
+    .setor-informacoes {
+        align-items: center;
+        text-align: center;
+        padding: 40px;
+    }
+
+    .endereco, .social {
+        flex-direction: column;
+    }
+}
